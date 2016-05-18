@@ -15,6 +15,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var descField: UITextField!
     
     var imgPicker: UIImagePickerController!
+    var keyboardUp = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         postImg.clipsToBounds = true
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
     }
 
@@ -49,5 +53,23 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imgPicker.dismissViewControllerAnimated(true, completion: nil)
         postImg.image = image
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if keyboardUp == false{
+            
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y -= keyboardSize.height
+            keyboardUp = true
+        }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y += keyboardSize.height
+            keyboardUp = false
+        }
     }
 }

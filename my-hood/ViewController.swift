@@ -61,6 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         DataService.instance.deleteAllPosts()
     }
     
+
     
 
 }
