@@ -20,8 +20,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="imm-ck-ePW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bannerlogo" translatesAutoresizingMaskIntoConstraints="NO" id="PsL-jg-jQB">
-                                <rect key="frame" x="154" y="28" width="293" height="148"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerlogo" translatesAutoresizingMaskIntoConstraints="NO" id="PsL-jg-jQB">
+                                <rect key="frame" x="188" y="90" width="225" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="1jI-9A-WbR"/>
+                                    <constraint firstAttribute="width" constant="225" id="e0l-Px-MXA"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -31,7 +35,7 @@
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="imm-ck-ePW" secondAttribute="bottom" id="Tkc-Fd-ZUd"/>
                             <constraint firstItem="imm-ck-ePW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Z6X-OB-HlL"/>
                             <constraint firstItem="PsL-jg-jQB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bPO-v3-EpA"/>
-                            <constraint firstItem="PsL-jg-jQB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="wzy-1Y-83m"/>
+                            <constraint firstItem="PsL-jg-jQB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="wzy-1Y-83m"/>
                         </constraints>
                     </view>
                 </viewController>
